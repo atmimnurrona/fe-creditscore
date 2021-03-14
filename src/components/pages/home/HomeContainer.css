@@ -1,0 +1,13 @@
+@media (min-width: 576px) {
+    .jumbotron {
+        padding: 0rem;
+    }
+}
+
+.display-2 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 70px;
+    color: #E42256;
+}
