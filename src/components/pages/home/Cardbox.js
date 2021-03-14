@@ -14,23 +14,30 @@ const Cardbox = (props) => {
     return (
         <div>
             <Container className="container-fluid">
-                <div className="card-home">
-                    <Col md={6} class="column">
-                        <Link to={'/form'}>
-                            <Card body>
-                                <CardImg
-                                    alt="Card image"
-                                    className="n-logo"
-                                    src={undraw_data_processing_yrrv}
-                                    height="250px"
-                                    width="300px"
-                                />
-                                <CardBody>
-                                    <Button size="lg" block style={{background:"#E42256", borderBlockColor:"#FFB8B8", fontSize:"30px"}}>Form Transaction</Button>
-                                </CardBody>
-                            </Card>
-                    </Link>
-                    </Col>
+                <div class="row">
+                    <div class="column">
+                        <div class="card">
+                            <Link to={'/form'}>
+                                <Card body>
+                                    <CardImg
+                                        alt="Card image"
+                                        className="n-logo"
+                                        src={undraw_data_processing_yrrv}
+                                        height="250px"
+                                        width="300px"
+                                    />
+                                    <CardBody>
+                                        <Button size="lg" block style={{background:"#E42256", borderBlockColor:"#FFB8B8", fontSize:"30px"}}>Form Transaction</Button>
+                                    </CardBody>
+                                </Card>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+                {/*<div className="card">*/}
+                {/*    <Col md={6} class="column">*/}
+                {/*        */}
+                {/*    </Col>*/}
                     <Col md={6} class="column">
                         <Link to={'/list'}>
                             <Card body>
@@ -62,7 +69,7 @@ const Cardbox = (props) => {
                             </Card>
                         </Link>
                     </Col>
-                </div>
+                {/*</div>*/}
             </Container>
         </div>
     );

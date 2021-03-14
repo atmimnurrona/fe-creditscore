@@ -8,29 +8,32 @@ import TransactionContainer from "./components/pages/transaction/TransactionCont
 import ReportContainer from "./components/pages/ReportContainer";
 import FormContainer from "./components/pages/transaction/FormContainer";
 import ListContainer from "./components/pages/transaction/ListContainer";
+import SignUp from "./components/login/SignUp";
+import SignIn from "./components/login/SignIn";
 
 class App extends Component {
     render() {
         return (
             <div>
-                <Header/>
-                <BrowserRouter>
-                    <Route path="/" exact>
-                        <HomeContainer/>
-                    </Route>
-                    <Route path="/transaction" exact>
-                        <TransactionContainer/>
-                    </Route>
-                    <Route path="/report" exact>
-                        <ReportContainer/>
-                    </Route>
-                    <Route path="/form" exact>
-                        <FormContainer/>
-                    </Route>
-                    <Route path="/list" exact>
-                        <ListContainer/>
-                    </Route>
-                </BrowserRouter>
+                <SignUp/>
+                {/*<Header/>*/}
+                {/*<BrowserRouter>*/}
+                {/*    <Route path="/" exact>*/}
+                {/*        <HomeContainer/>*/}
+                {/*    </Route>*/}
+                {/*    <Route path="/transaction" exact>*/}
+                {/*        <TransactionContainer/>*/}
+                {/*    </Route>*/}
+                {/*    <Route path="/report" exact>*/}
+                {/*        <ReportContainer/>*/}
+                {/*    </Route>*/}
+                {/*    <Route path="/form" exact>*/}
+                {/*        <FormContainer/>*/}
+                {/*    </Route>*/}
+                {/*    <Route path="/list" exact>*/}
+                {/*        <ListContainer/>*/}
+                {/*    </Route>*/}
+                {/*</BrowserRouter>*/}
             </div>
         );
     }
