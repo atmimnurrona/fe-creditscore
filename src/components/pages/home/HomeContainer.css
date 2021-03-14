@@ -9,5 +9,18 @@
     font-weight: 500;
     font-size: 60px;
     line-height: 70px;
+    margin-left: 150px;
     color: #E42256;
+}
+
+.display-3 {
+    margin-left: 150px;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
 }

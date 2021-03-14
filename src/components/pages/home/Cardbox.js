@@ -1,5 +1,4 @@
 import {Container} from "react-bootstrap";
-import {Row} from "react-bootstrap";
 import {Col} from "react-bootstrap";
 import {CardImg} from "react-bootstrap";
 import React from "react";
@@ -9,13 +8,14 @@ import undraw_data_processing_yrrv from '../../images/undraw_data_processing_yrr
 import {Button, CardBody} from "reactstrap";
 import {Card} from "reactstrap";
 import {Link} from "react-router-dom";
+import './HomeContainer.css';
 
 const Cardbox = (props) => {
     return (
         <div>
             <Container className="container-fluid">
                 <div className="card-home">
-                    <Col md={6}>
+                    <Col md={6} class="column">
                         <Link to={'/form'}>
                             <Card body>
                                 <CardImg
@@ -31,7 +31,7 @@ const Cardbox = (props) => {
                             </Card>
                     </Link>
                     </Col>
-                    <Col md={6}>
+                    <Col md={6} class="column">
                         <Link to={'/list'}>
                             <Card body>
                                 <CardImg
@@ -47,7 +47,7 @@ const Cardbox = (props) => {
                             </Card>
                         </Link>
                     </Col>
-                    <Col md={6}>
+                    <Col md={6} class="column">
                         <Link to={'/report'}>
                             <Card body>
                                 <CardImg
