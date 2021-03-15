@@ -41,7 +41,7 @@ class SignIn extends Component {
 
                                 <div class="form-group col-lg-12 mx-auto mb-0" >
                                     <Button style={{background:"#e42256"}} block>
-                                        <a href="#" className="btn btn-block py-2">
+                                        <a href="/home" className="btn btn-block py-2">
                                             <span className="font-weight-bold" style={{color: "#ffff"}}>SIGN IN</span>
                                         </a>
                                     </Button>

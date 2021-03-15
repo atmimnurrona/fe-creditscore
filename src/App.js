@@ -10,30 +10,36 @@ import FormContainer from "./components/pages/transaction/FormContainer";
 import ListContainer from "./components/pages/transaction/ListContainer";
 import SignUp from "./components/login/SignUp";
 import SignIn from "./components/login/SignIn";
+import FormTransaction from "./components/pages/transaction/FormTransaction";
 
 class App extends Component {
     render() {
         return (
             <div>
-                <SignUp/>
                 {/*<Header/>*/}
-                {/*<BrowserRouter>*/}
-                {/*    <Route path="/" exact>*/}
-                {/*        <HomeContainer/>*/}
-                {/*    </Route>*/}
-                {/*    <Route path="/transaction" exact>*/}
-                {/*        <TransactionContainer/>*/}
-                {/*    </Route>*/}
-                {/*    <Route path="/report" exact>*/}
-                {/*        <ReportContainer/>*/}
-                {/*    </Route>*/}
-                {/*    <Route path="/form" exact>*/}
-                {/*        <FormContainer/>*/}
-                {/*    </Route>*/}
-                {/*    <Route path="/list" exact>*/}
-                {/*        <ListContainer/>*/}
-                {/*    </Route>*/}
-                {/*</BrowserRouter>*/}
+                <BrowserRouter>
+                    <Route path="/home" exact>
+                        <HomeContainer/>
+                    </Route>
+                    <Route path="/transaction" exact>
+                        <TransactionContainer/>
+                    </Route>
+                    <Route path="/report" exact>
+                        <ReportContainer/>
+                    </Route>
+                    <Route path="/form" exact>
+                        <FormTransaction/>
+                    </Route>
+                    <Route path="/list" exact>
+                        <ListContainer/>
+                    </Route>
+                    <Route path="/" exact>
+                        <SignIn/>
+                    </Route>
+                    <Route path="/add/account">
+                        <SignUp/>
+                    </Route>
+                </BrowserRouter>
             </div>
         );
     }

@@ -1,6 +1,7 @@
-import {Component} from "react";
+import React, {Component} from "react";
 import ListTransaction from "./ListTransaction";
 import {Container} from "reactstrap";
+import Header from "../../navbar/NavbarElement";
 
 class ListContainer extends Component {
 
@@ -64,6 +65,7 @@ state = {
     render() {
         return (
             <div style={{margin:"100px"}}>
+                <Header/>
                     <h1 className="display-2">List Transaction</h1>
                     <ListTransaction users={this.state.users}/>
             </div>

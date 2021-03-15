@@ -1,11 +1,17 @@
 import React from 'react';
 import { Container, InputGroup, Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import {InputGroupText} from "reactstrap";
+import Header from "../../navbar/NavbarElement";
+import './FormTransaction.css'
 
 const FormTransaction = (props) => {
     return (
-            <Form>
-                <Container>
+
+        <div className="col-md-13">
+            <Header/>
+            <div className="form form-container">
+                <h2 className="title">FORM TRANSACTION</h2>
+                <Form>
                     <FormGroup row>
                         <Label for="name" sm={2}>Customer's Name</Label>
                         <Col sm={10}>
@@ -71,8 +77,10 @@ const FormTransaction = (props) => {
                             <Button>Submit</Button>
                         </Col>
                     </FormGroup>
-                </Container>
-            </Form>
+                </Form>
+            </div>
+        </div>
+
     );
 }
 
