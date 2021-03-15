@@ -109,7 +109,7 @@ class SignUp extends Component {
 
                     <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
                         <img src={undraw_Updated_resume_re_q1or} alt="" class="img-fluid mb-3 d-none d-md-block"/>
-                        <h1 style={{color: "#e42256", fontSize: "55px"}}>Create an Account</h1>
+                        <h1 style={{color: "#e42256", fontSize: "55px"}}>Create new account</h1>
                     </div>
 
                     <div className="col-md-7 col-lg-6 ml-auto">

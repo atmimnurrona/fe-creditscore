@@ -6,50 +6,61 @@ import React from "react";
 import undraw_Resume_re_hkth from '../../images/undraw_Resume_re_hkth.svg';
 import undraw_No_data_re_kwbl from '../../images/undraw_No_data_re_kwbl.svg';
 import undraw_selection_re_ycpo from '../../images/undraw_selection_re_ycpo.svg';
-import {CardBody} from "reactstrap";
+import {Button, CardBody} from "reactstrap";
 import {CardTitle} from "reactstrap";
 import {Card} from "reactstrap";
 import {Link} from "react-router-dom";
+import undraw_data_processing_yrrv from "../../images/undraw_data_processing_yrrv.svg";
+import undraw_Hiring_re_yk5n from "../../images/undraw_Hiring_re_yk5n.svg";
 
 const Cardboxtransaction = (props) => {
     return (
-        <div>
-            <Container>
-                <Row>
-                    <Col md={3}>
-                        <Link to={'/form'}>
-                            <Card>
-                                <CardImg
-                                    alt="Card image"
-                                    className="n-logo"
-                                    src={undraw_Resume_re_hkth}
-                                    height="250px"
-                                    width="300px"
-                                />
-                                <CardBody>
-                                    <CardTitle tag="h5">Form Transaction</CardTitle>
-                                </CardBody>
-                            </Card>
-                        </Link>
-                    </Col>
-                    <Col md={3}>
-                        <Link to={'/list'}>
-                            <Card>
-                                <CardImg
-                                    alt="Card image"
-                                    className="n-logo"
-                                    src={undraw_selection_re_ycpo}
-                                    height="250px"
-                                    width="300px"
-                                />
-                                <CardBody>
-                                    <CardTitle tag="h5">List Transaction</CardTitle>
-                                </CardBody>
-                            </Card>
-                        </Link>
-                    </Col>
-                </Row>
-            </Container>
+        <div className="container">
+            <div className="card-columns">
+                <div className="card">
+                    <div className="card-body text-center">
+                        <CardImg
+                            alt="Card image"
+                            className="n-logo"
+                            src={undraw_data_processing_yrrv}
+                            height="250px"
+                            width="300px"
+                        />
+                        <CardBody>
+                            <Button href="/form" size="lg" block style={{background:"#E42256", borderBlockColor:"#FFB8B8", fontSize:"20px"}}>Form Customer</Button>
+                            <Button href="/list" size="lg" block style={{background:"#E42256", borderBlockColor:"#FFB8B8", fontSize:"20px"}}>List Customer</Button>
+                        </CardBody>
+                    </div>
+                </div>
+                <div className="card">
+                    <div className="card-body text-center">
+                        <CardImg
+                            alt="Card image"
+                            className="n-logo"
+                            src={undraw_selection_re_ycpo}
+                            height="250px"
+                            width="300px"
+                        />
+                        <CardBody>
+                            <Button size="lg" block style={{background:"#E42256", borderBlockColor:"#FFB8B8", fontSize:"20px"}}>Add Transaction</Button>
+                            <Button size="lg" block style={{background:"#E42256", borderBlockColor:"#FFB8B8", fontSize:"20px"}}>List Transaction</Button>
+                        </CardBody>
+                    </div>
+                </div>
+                <div className="card">
+                    <div className="card-body text-center">
+                        <CardImg
+                            alt="Card image"
+                            src={undraw_Hiring_re_yk5n}
+                            height="250px"
+                            width="300px"
+                        />
+                        <CardBody>
+                            <Button size="lg" block style={{background:"#E42256", borderBlockColor:"#FFB8B8", fontSize:"20px"}}>Report Transaction</Button>
+                        </CardBody>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

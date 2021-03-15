@@ -1,12 +1,29 @@
-@media (min-width: 576px) {
+@media (min-width: 376px) {
     .jumbotron {
-        padding: 0rem;
+        padding: 50px;
     }
 }
 
-.display-3 {
-    margin-left: 150px;
+@media screen and (max-width: 640px) {
+    .jumbotron p {
+        font-size:15px;
+    }
+    .jumbotron h1 {
+        font-size:25px;
+    }
 }
+
+@media screen and (max-width: 360px) {
+    .jumbotron h1 {
+        font-size:15px;
+    }
+    .jumbotron p {
+        font-size:10px;
+    }
+}
+/*.display-3 {*/
+/*    margin-left: 150px;*/
+/*}*/
 
 /* Float four columns side by side */
 .column {
