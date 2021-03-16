@@ -8,6 +8,10 @@ import FormTransactionContainer from "./components/pages/transaction/form/FormTr
 import ListTransactionContainer from "./components/pages/transaction/list/ListTransactionContainer";
 import SignUp from "./components/login/SignUp";
 import SignIn from "./components/login/SignIn";
+import ListCustomerContainer from "./components/pages/customer/list/ListCustomerContainer";
+import EditCustomerContainer from "./components/pages/customer/EditCustomerContainer";
+import DetailCustomerContainer from "./components/pages/customer/DetailCustomerContainer";
+import FormCustomerContainer from "./components/pages/customer/form/FormCustomerContainer";
 
 class App extends Component {
     render() {
@@ -31,6 +35,18 @@ class App extends Component {
                     </Route>
                     <Route path="/add/account">
                         <SignUp/>
+                    </Route>
+                    <Route path='/customer' exact>
+                        <ListCustomerContainer/>
+                    </Route>
+                    <Route path='/customer/edit/:no' exact>
+                        <EditCustomerContainer/>
+                    </Route>
+                    <Route path='/customer/detail/:no' exact>
+                        <DetailCustomerContainer/>
+                    </Route>
+                    <Route path='/customer/form' exact>
+                        <FormCustomerContainer/>
                     </Route>
                 </BrowserRouter>
             </div>

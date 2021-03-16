@@ -31,10 +31,10 @@ const Header = () => {
                             </DropdownToggle>
                             <DropdownMenu right>
                                 <DropdownItem>
-                                    <NavLink href="/form/customer" style={{fontSize:"20px", color:"#e42256"}}>Form Customer</NavLink>
+                                    <NavLink href="/customer/form" style={{fontSize:"20px", color:"#e42256"}}>Form Customer</NavLink>
                                 </DropdownItem>
                                 <DropdownItem>
-                                    <NavLink href="/list/customer" style={{fontSize:"20px", color:"#e42256"}}>List Customer</NavLink>
+                                    <NavLink href="/customer" style={{fontSize:"20px", color:"#e42256"}}>List Customer</NavLink>
                                 </DropdownItem>
                             </DropdownMenu>
                         </UncontrolledDropdown>
