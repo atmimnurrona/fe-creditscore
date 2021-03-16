@@ -13,15 +13,15 @@ class HomeContainer extends Component {
             <div>
                 <Header/>
                 <div className="jumbotron">
-                    <Jumbotron className="jumbotron-fluid" style={{height:"200px"}}>
-                        <Row style={{marginTop:"-70px"}}>
+                    <Jumbotron className="jumbotron-fluid" style={{height:"30vh"}}>
+                        <Row style={{marginTop:"-5%"}}>
                             <Col>
-                                <h1 className="display-2" style={{color: "#e42256", fontSize:"80px", marginLeft:"100px"}}>Hello, Admin!</h1>
-                                <p className="display-3" style={{fontSize:"40px", marginLeft:"100px"}}>What do you want to do?</p>
-                                <Button href="/add/account" style={{background:"#e42256", marginLeft:"100px", marginTop:"30px"}}><FontAwesomeIcon icon={faPlus}/> New Account</Button>
+                                <h1 style={{color: "#e42256", fontSize:"5vw", marginLeft:"15%"}}>Hello, Admin!</h1>
+                                <p style={{fontSize:"2vw", marginLeft:"15%"}}>What do you want to do?</p>
+                                <Button href="/add/account" style={{background:"#e42256", marginLeft:"15%", marginTop:"5%"}}><FontAwesomeIcon icon={faPlus}/> New Account</Button>
                             </Col>
                             <Col>
-                                <img src = {Image} alt="image" className="img-fluid float-right"/>
+                                <img src = {Image} alt="image" className="img-fluid float-right" style={{marginRight:"15%"}}/>
                             </Col>
                         </Row>
                     </Jumbotron>

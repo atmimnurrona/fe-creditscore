@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {NavbarText, Dropdown, NavbarBrand, Navbar, UncontrolledDropdown} from "reactstrap";
+import {NavbarBrand, Navbar, UncontrolledDropdown} from "reactstrap";
 import {NavbarToggler} from "reactstrap";
 import {Collapse} from "reactstrap";
 import {Nav} from "reactstrap";

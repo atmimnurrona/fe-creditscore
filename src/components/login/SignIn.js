@@ -1,6 +1,5 @@
 import React, {Component} from "react";
-import image from "../images/undraw_Hiring_re_yk5n.svg"
-import {faIcons, faInfoCircle, faKey, faLock, faUser} from "@fortawesome/free-solid-svg-icons";
+import { faKey, faUser} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Button, Container} from "reactstrap";
 import undraw_Access_account_re_8spm from "../images/undraw_Access_account_re_8spm.svg"
