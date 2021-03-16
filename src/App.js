@@ -12,12 +12,20 @@ import ListCustomerContainer from "./components/pages/customer/list/ListCustomer
 import EditCustomerContainer from "./components/pages/customer/EditCustomerContainer";
 import DetailCustomerContainer from "./components/pages/customer/DetailCustomerContainer";
 import FormCustomerContainer from "./components/pages/customer/form/FormCustomerContainer";
+import EditTransactionContainer from "./containers/EditTransactionContainer";
+import DetailTransactionContainer from "./containers/DetailTransactionContainer";
 
 class App extends Component {
     render() {
         return (
             <div>
                 <BrowserRouter>
+                    <Route path="/" exact>
+                        <SignIn/>
+                    </Route>
+                    <Route path="/add/account">
+                        <SignUp/>
+                    </Route>
                     <Route path="/home" exact>
                         <HomeContainer/>
                     </Route>
@@ -30,11 +38,11 @@ class App extends Component {
                     <Route path="/list/transaction" exact>
                         <ListTransactionContainer/>
                     </Route>
-                    <Route path="/" exact>
-                        <SignIn/>
+                    <Route path="/edit/transaction/:id" exact>
+                        <EditTransactionContainer/>
                     </Route>
-                    <Route path="/add/account">
-                        <SignUp/>
+                    <Route path="/detail/transaction/:id" exact>
+                        <DetailTransactionContainer/>
                     </Route>
                     <Route path='/customer' exact>
                         <ListCustomerContainer/>

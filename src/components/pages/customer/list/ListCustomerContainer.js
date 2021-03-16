@@ -2,7 +2,6 @@ import React, {Component} from "react";
 import CustomerList from "./CustomerList";
 import Header from "../../../navbar/NavbarElement";
 
-
 export default class ListCustomerContainer extends Component {
     state = {
         title : 'Customer',

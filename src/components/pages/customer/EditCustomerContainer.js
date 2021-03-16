@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Container} from "react-bootstrap";
-import Back from "./component/BackComponent";
+import Back from "../BackComponent";
 
 export default class DetailCustomerContainer extends Component {
     render() {
