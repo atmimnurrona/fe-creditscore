@@ -11,6 +11,9 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import "./Form.css"
 import {Button} from "reactstrap";
 
+// const SignUp = () => {
+//
+// const
 class SignUp extends Component {
 
     constructor(props) {
