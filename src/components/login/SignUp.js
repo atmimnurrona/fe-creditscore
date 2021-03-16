@@ -12,6 +12,7 @@ import "./Form.css"
 import {Button} from "reactstrap";
 
 class SignUp extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
