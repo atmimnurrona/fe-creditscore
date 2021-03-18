@@ -3,7 +3,11 @@ import CustomerList from "./CustomerList";
 import Header from "../../../navbar/NavbarElement";
 
 export default class ListCustomerContainer extends Component {
+
+
     render() {
+
+        console.log("ini list")
         return(
             <div>
                 <Header/>

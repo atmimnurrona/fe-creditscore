@@ -5,27 +5,26 @@ import {
     UPDATE_CUSTOMER_BY_ID, UPDATE_CUSTOMER_BY_ID_SUCCESS, UPDATE_CUSTOMER_BY_ID_FAILURE,
     SAVE_CUSTOMER, SAVE_CUSTOMER_SUCCESS, SAVE_CUSTOMER_FAILURE
 } from "../constants/actionConstant";
+// import axios from "axios"
 
 import {takeLatest, put} from 'redux-saga/effects';
 import axios from '../configs/api'
-import pagination from "./pagination";
+// import pagination from "./pagination";
 
-function* findAllCustomer(action) {
-    let parameter = pagination(action)
+function* findAllCustomer() {
+    // let parameter = pagination(action)
 
-    let result = yield axios.get(`/customer?${parameter}`)
+    let result = yield axios.get("/customer")
         .then(data => {
+            console.log("ini sagas", data)
             return {
                 type: FIND_ALL_CUSTOMER_SUCCESS,
-                data: data.list,
-                pagination: {
-                    size: data.size,
-                    total: data.total,
-                    page: data.page
-                },
+                data: data.data
+
             };
         })
         .catch((err) => {
+            console.log("sagas", err)
             return {
                 type: FIND_ALL_CUSTOMER_FAILURE,
                 error: err

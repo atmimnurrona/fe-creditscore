@@ -17,36 +17,26 @@ const initialState = {
     error: null,
 }
 
-export const findAllCustomer = (state = initialState, action) => {
-    switch (action.type) {
+export const findAllCustomer = (state = initialState, data) => {
+    switch (data.type) {
         case FIND_ALL_CUSTOMER:
             return {
                 ...state,
-                pagination: {
-                    size: null,
-                    total: null,
-                    page: null
-                },
                 isLoading: true
             };
 
         case FIND_ALL_CUSTOMER_SUCCESS:
             return {
-                data: action.data,
-                pagination: {
-                    size: action.pagination.size,
-                    total: action.pagination.total,
-                    page: action.pagination.page
-                },
+                data: data.data,
                 isLoading: false,
                 error: null
             };
 
         case FIND_ALL_CUSTOMER_FAILURE:
             return {
-                ...state,
+                data: null,
                 isLoading: false,
-                error: action.error
+                error: data.error
             };
         default:
             return {

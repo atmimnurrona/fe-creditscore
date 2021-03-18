@@ -27,8 +27,8 @@ const Header = () => {
 
     return (
         <div>
-            <Navbar className="navbar" light expand="sm">
-                <NavbarBrand href="/">OK'Finance</NavbarBrand>
+            <Navbar className="navbar" light expand="sm" >
+                <NavbarBrand href="/" style={{color: "#fff", fontSize : "2vw"}}>OK'Finance</NavbarBrand>
                 <NavbarToggler onClick={toggle}/>
                 <Collapse isOpen={isOpen} navbar>
                     <Nav navbar>

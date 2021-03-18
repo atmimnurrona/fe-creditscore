@@ -6,12 +6,9 @@ import {
     SAVE_CUSTOMER
 } from "../constants/actionConstant";
 
-export function findAll(pagination) {
+export function findAll() {
     return{
-        type: FIND_ALL_CUSTOMER,
-        pagination: {
-            page: pagination.page,
-            size: pagination.size
-        }
+        type: FIND_ALL_CUSTOMER
+
     }
 }

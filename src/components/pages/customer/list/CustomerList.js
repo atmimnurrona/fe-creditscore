@@ -90,10 +90,15 @@ function CustomerList({ isLoading, customers, findAll, error, size, total, curre
         }
     ];
 
+    console.log(findAll)
+
     return (
         <ContainerError error={error}>
         <Container>
-            {!isLoading ? (
+            {
+                console.log(findAll)
+            }
+            {!isLoading ? customers && (
                 <ToolkitProvider
                     bootstrap4
                     keyField='id'
@@ -166,6 +171,7 @@ const mapStateToProps = (state) => {
         currentPage: state.findAllCustomer.pagination.page
     };
 };
+
 
 const mapDispatchToProps = { findAll }
 

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import undraw_Updated_resume_re_q1or from "../images/undraw_Updated_resume_re_q1or.svg"
 import {
     faEnvelope,
@@ -9,120 +9,133 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import "./Form.css"
-import {Button} from "reactstrap";
+import {FormText, Input, Label, FormGroup, Button} from "reactstrap";
+import Header from "../navbar/NavbarElement";
+import swal from 'sweetalert';
 
-// const SignUp = () => {
-//
-// const
-class SignUp extends Component {
+const SignUp = () => {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            input: {},
-            errors: {}
-        };
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
+    const [fullName, setFullName] = useState('');
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [role, setRole] = useState('');
+    const [profilePicture, setProfilePicture] = useState('');
 
-    handleChange(event) {
-        let input = this.state.input;
-        input[event.target.name] = event.target.value;
+    const [fullNameError, setFullNameError] = useState('');
+    const [usernameError, setUsernameError] = useState('');
+    const [emailError, setEmailError] = useState('');
+    const [passwordError, setPasswordError] = useState('');
+    const [roleError, setRoleError] = useState('');
+    const [profilePictureError, setProfilePictureError] = useState('');
 
-        this.setState({
-            input
-        });
-    }
+    const onSubmit = () => {
+        const isValid = validate();
 
-    handleSubmit(event) {
-        event.preventDefault();
-
-        if (this.validate()) {
-            console.log(this.state)
-
-            let input = {};
-            input["fullname"] = "";
-            input["username"] = "";
-            input["email"] = "";
-            input["password"] = "";
-            input["confirm_password"] = "";
-            input["role"]="";
-            this.setState({input: input});
-
-            alert('New Account created')
-        }
-    }
-
-    validate() {
-        let input = this.state.input;
-        let errors = {};
-        let isValid = true;
-
-        if (!input["fullname"]) {
-            isValid = false;
-            errors["fullname"] = "Please enter full name.";
-        }
-
-        if (!input["username"]) {
-            isValid = false;
-            errors["username"] = "Please enter username.";
-        }
-
-        if (!input["email"]) {
-            isValid = false;
-            errors["email"] = "Please enter your email address!";
-        }
-        if (typeof input["email"] !== "undefined") {
-            var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-            if (!pattern.test(input["email"])) {
-                isValid = false;
-                errors["email"] = "Please enter valid email address.";
+        if (isValid) {
+            const data = {
+                fullName: fullName,
+                username: username,
+                email: email,
+                password: password,
+                role: role,
+                profilePicture: profilePicture
             }
+            //axios
         }
-        if (!input["password"]) {
-            isValid = false;
-            errors["password"] = "Please enter password.";
-        }
-
-        if (!input["confirm_password"]) {
-            isValid = false;
-            errors["confirm_password"] = "Please enter confirm password.";
-        }
-        if (typeof input["password"] !== "undefined" && typeof input["confirm_password"] !== "undefined") {
-
-            if (input["password"] !== input["confirm_password"]) {
-                isValid = false;
-                errors["password"] = "Passwords don't match.";
-            }
-        }
-        if (!input["role"]) {
-            isValid = false;
-            errors["role"] = "Please select the role.";
-        }
-        this.setState({
-            errors: errors
-        });
-        return isValid;
     }
 
-    render() {
+    const validate = () => {
+        let fullNameError = "";
+        let usernameError = "";
+        let emailError = "";
+        let passwordError = "";
+        let roleError = "";
+        let profilePictureError = "";
+
+        if (!fullName) {
+            fullNameError = "*please enter fullname"
+        }
+        if (!username) {
+            usernameError = "*please enter username"
+        }
+        if (!email) {
+            emailError = "*please enter email"
+        }
+        if (!password) {
+            passwordError = "*please enter password"
+        }
+        if (!role) {
+            roleError = "*please select one"
+        }
+        if (!profilePicture) {
+            profilePictureError = "*please upload photo"
+        }
+        return true;
+    }
+
+    const handleFullNameChange = (e) => {
+        const inputValue = e.target.value;
+        const isEmpty = inputValue === "";
+        setFullName(inputValue)
+        setFullNameError(isEmpty)
+    }
+
+    const handleUsernameChange = (e) => {
+        const inputValue = e.target.value;
+        const isEmpty = inputValue === "";
+        setUsername(inputValue)
+        setUsernameError(isEmpty)
+    }
+
+    const handleEmailChange = (e) => {
+        const inputValue = e.target.value;
+        const isEmpty = inputValue === "";
+        setEmail(inputValue)
+        setEmailError(isEmpty)
+    }
+
+    const handlePasswordChange = (e) => {
+        const inputValue = e.target.value;
+        const isEmpty = inputValue === "";
+        setPassword(inputValue)
+        setPasswordError(isEmpty)
+    }
+
+    const handleRoleChange = (e) => {
+        const inputValue = e.target.value;
+        const isEmpty = inputValue === "";
+        setRole(inputValue)
+        setRoleError(isEmpty)
+    }
+
+    const handleProfilPictureChange = (e) => {
+        const inputValue = e.target.value;
+        const isEmpty = inputValue === "";
+        setProfilePicture(inputValue)
+        setProfilePictureError(isEmpty)
+    }
+
         return (
-            <div className="container">
-                <div class="row py-5 mt-4 align-items-center">
+            <div>
+                <Header/>
 
-                    <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
-                        <img src={undraw_Updated_resume_re_q1or} alt="" class="img-fluid mb-3 d-none d-md-block"/>
+                <div className="container">
+
+                <div className="row align-items-center">
+
+                    <div className="col-md-5 pr-lg-5 mb-5 mb-md-0">
+                        <img src={undraw_Updated_resume_re_q1or} alt="" className="img-fluid mb-3 d-none d-md-block"/>
                         <h1 style={{color: "#e42256", fontSize: "55px"}}>Create new account</h1>
                     </div>
 
                     <div className="col-md-7 col-lg-6 ml-auto">
-                        <form onSubmit={this.handleSubmit}>
-                            <div class="row">
+                        <form>
+                            <div className="row">
 
-                                <div class="input-group col-lg-12 mb-4">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <div className="input-group col-lg-12 mb-4">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text bg-white px-4 border-md border-right-0">
                                             <FontAwesomeIcon icon={faUserCircle}/>
                                         </span>
                                     </div>
@@ -130,10 +143,15 @@ class SignUp extends Component {
                                            type="text"
                                            name="fullname"
                                            placeholder="Full Name"
-                                           value={this.state.input.fullname}
-                                           onChange={this.handleChange}
-                                           class="form-control bg-white border-left-0 border-md"/><br/>
-                                    <div className="text-danger">{this.state.errors.fullname}</div>
+                                           onChange={(e) => handleFullNameChange(e)}
+                                           className="form-control bg-white border-left-0 border-md"/><br/>
+                                </div>
+                                <div style={{
+                                    marginLeft:"20px",
+                                    marginTop:"-25px",
+                                    marginBottom:"20px",
+                                    color:"red"}}>
+                                    {fullNameError}
                                 </div>
 
                                     <div className="input-group col-lg-12 mb-4">
@@ -146,16 +164,21 @@ class SignUp extends Component {
                                                type="text"
                                                name="username"
                                                placeholder="Username"
-                                               value={this.state.input.username}
-                                               onChange={this.handleChange}
+                                               onChange={(e) => handleUsernameChange(e)}
                                                className="form-control bg-white border-left-0 border-md"/>
                                     </div>
-                                <div className="text-danger">{this.state.errors.username}</div>
+                                <div style={{
+                                    marginLeft:"20px",
+                                    marginTop:"-25px",
+                                    marginBottom:"20px",
+                                    color:"red"}}>
+                                    {usernameError}
+                                </div>
 
 
-                                <div class="input-group col-lg-12 mb-4">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <div className="input-group col-lg-12 mb-4">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text bg-white px-4 border-md border-right-0">
                                             <FontAwesomeIcon icon={faEnvelope}/>
                                         </span>
                                     </div>
@@ -163,15 +186,20 @@ class SignUp extends Component {
                                            type="email"
                                            name="email"
                                            placeholder="Email Address"
-                                           value={this.state.input.email}
-                                           onChange={this.handleChange}
-                                           class="form-control bg-white border-left-0 border-md"/><br/>
-                                    <div className="text-danger">{this.state.errors.email}</div>
+                                           onChange={(e) => handleEmailChange(e)}
+                                           className="form-control bg-white border-left-0 border-md"/><br/>
+                                </div>
+                                <div style={{
+                                    marginLeft:"20px",
+                                    marginTop:"-25px",
+                                    marginBottom:"20px",
+                                    color:"red"}}>
+                                    {emailError}
                                 </div>
 
-                                <div class="input-group col-lg-12 mb-4">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <div className="input-group col-lg-12 mb-4">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text bg-white px-4 border-md border-right-0">
                                             <FontAwesomeIcon icon={faKey}/>
                                         </span>
                                     </div>
@@ -179,27 +207,15 @@ class SignUp extends Component {
                                            type="password"
                                            name="password"
                                            placeholder="Password"
-                                           value={this.state.input.password}
-                                           onChange={this.handleChange}
-                                           class="form-control bg-white border-left-0 border-md"/><br/>
-                                    <div className="text-danger">{this.state.errors.password}</div>
+                                           onChange={(e) => handlePasswordChange(e)}
+                                           className="form-control bg-white border-left-0 border-md"/><br/>
                                 </div>
-
-                                <div class="input-group col-lg-12 mb-4">
-                                    <div className="text-danger">{this.state.errors.password}</div>
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                            <FontAwesomeIcon icon={faKey}/>
-                                        </span>
-                                    </div>
-                                    <input id="passwordConfirmation"
-                                           type="password"
-                                           name="passwordConfirmation"
-                                           placeholder="Confirm Password"
-                                           value={this.state.input.confirm_password}
-                                           onChange={this.handleChange}
-                                           class="form-control bg-white border-left-0 border-md"/><br/>
-                                    <div className="text-danger justify-content-sm-end">{this.state.errors.confirm_password}</div>
+                                <div style={{
+                                    marginLeft:"20px",
+                                    marginTop:"-25px",
+                                    marginBottom:"20px",
+                                    color:"red"}}>
+                                    {passwordError}
                                 </div>
 
                                 <div className="input-group col-lg-12 mb-4">
@@ -212,19 +228,40 @@ class SignUp extends Component {
                                             className="form-control custom-select bg-white border-left-0 border-md">
                                         <option selected>---Choose the role---</option>
                                         <option value="1">Supervisor</option>
-                                        <option value="0">Staff</option>
-                                        value={this.state.input.fullname}
-                                        onChange={this.handleChange}
+                                        <option value="2">Staff</option>
+                                        onChange={(e) => handleRoleChange(e)}
                                     </select><br/>
-                                    <div className="text-danger justify-content-sm-end">{this.state.errors.role}</div>
+                                </div>
+                                <div style={{
+                                    marginLeft:"20px",
+                                    marginTop:"-25px",
+                                    marginBottom:"20px",
+                                    color:"red"}}>
+                                    {roleError}
                                 </div>
 
-                                <div class="form-group col-lg-12 mx-auto mb-0">
-                                    <Button style={{background: "#e42256"}} block>
-                                        <a href="/home" className="btn btn-block py-2">
+                                <div className="input-group col-lg-12 mb-4">
+                                    <FormGroup>
+                                        <Label for="exampleFile">File</Label>
+                                        <Input type="file" name="file" id="exampleFile" />
+                                        <FormText color="muted">
+                                            max/min size 500kb.
+                                        </FormText>
+                                    </FormGroup>
+                                </div>
+                                <div style={{
+                                    marginLeft: "20px",
+                                    marginTop: "-25px",
+                                    marginBottom: "20px",
+                                    color: "red"
+                                }}>
+                                    {profilePictureError}
+                                </div>
+
+                                <div className="form-group col-lg-12 mx-auto mb-0">
+                                    <Button style={{background: "#e42256"}} onClick={() => onSubmit()} href="/home" block>
                                             <span className="font-weight-bold"
-                                                  style={{color: "#ffff"}}>Create account</span>
-                                        </a>
+                                                  style={{color: "#ffff"}}>CREATE ACCOUNT</span>
                                     </Button>
                                 </div>
 
@@ -233,8 +270,9 @@ class SignUp extends Component {
                     </div>
                 </div>
             </div>
+            </div>
         );
-    }
+
 }
 
 export default SignUp;
